@@ -452,95 +452,25 @@
     .contact-icon {
       width: 60px;
       height: 60px;
-      background: var(--clr-primary);
       border-radius: 50%;
+      background: rgba(52, 152, 219, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--clr-white);
-      font-size: 1.4rem;
-      flex-shrink: 0;
-      transition: var(--transition);
     }
 
-    .contact-item:hover .contact-icon {
-      background: var(--clr-accent);
-    }
-
-    .contact-details {
-      text-align: left;
+    .contact-icon i {
+      font-size: 1.5rem;
+      color: var(--clr-primary);
     }
 
     .contact-details h3 {
       font-size: 1.2rem;
       color: var(--clr-dark);
-      margin-bottom: 0.3rem;
     }
 
     .contact-details p {
-      color: var(--clr-primary);
-      font-weight: 500;
-      margin: 0;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 200;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(44, 62, 80, 0.9);
-      overflow-y: auto;
-    }
-
-    .modal-content {
-      background: var(--clr-white);
-      margin: 5% auto;
-      padding: 3rem;
-      width: 90%;
-      max-width: 900px;
-      border-radius: 12px;
-      position: relative;
-      animation: modalOpen 0.4s;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2rem;
       color: var(--clr-gray);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .close-modal:hover {
-      color: var(--clr-accent);
-      transform: rotate(90deg);
-    }
-
-    .image-gallery {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      margin-bottom: 2rem;
-    }
-
-    .gallery-image img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: var(--transition);
-    }
-
-    .gallery-image img:hover {
-      transform: scale(1.03);
     }
 
     /* Footer */
@@ -548,25 +478,95 @@
       background: var(--clr-dark);
       color: var(--clr-white);
       text-align: center;
-      padding: 3rem 0;
+      padding: 2rem;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 200;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: var(--clr-white);
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 3rem;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--clr-gray);
+      transition: var(--transition);
+    }
+
+    .close-modal:hover {
+      color: var(--clr-accent);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 1.5rem;
+      color: var(--clr-dark);
+    }
+
+    .modal-content h3 {
+      margin: 1.5rem 0 0.8rem;
+      color: var(--clr-primary);
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
+      color: var(--clr-dark);
+    }
+
+    .modal-content ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content li {
+      margin-bottom: 0.5rem;
+      color: var(--clr-dark);
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .gallery-image img:hover {
+      transform: scale(1.03);
     }
 
     /* Animations */
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes modalOpen {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -576,26 +576,27 @@
 
     /* Responsive */
     @media (max-width: 992px) {
+      .header-content h1 {
+        font-size: 3rem;
+      }
       .about-container {
         flex-direction: column;
         text-align: center;
       }
       .about-image {
-        margin: 0 auto 2rem;
-      }
-      .skill-category h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .contact-info {
-        flex-direction: column;
-        align-items: center;
+        margin: 0 auto;
       }
     }
 
     @media (max-width: 768px) {
       .header-content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+      }
+      .header-content p {
+        font-size: 1.2rem;
+      }
+      .nav-links {
+        display: none;
       }
       .nav-container {
         flex-direction: column;
@@ -647,33 +648,20 @@
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1 - MAGV -->
         <div class="project-card">
-          <div class="project-image" style="background-image: url('Images/fsae1.png')">
+          <div class="project-image" style="background-image: url('Images/MAGV5.png')">
             <div class="project-overlay">
-              <a href="#" class="view-project" onclick="openProjectModal('fsae-fuel-tank'); return false;">View Project</a>
+              <a href="#" class="view-project" onclick="openProjectModal('magv'); return false;">View Project</a>
             </div>
           </div>
           <div class="project-info">
-            <h3 class="project-title">FSAE Fuel Tank</h3>
-            <p>Custom-designed fuel tank for a Formula SAE race car, optimizing weight, capacity, and safety requirements.</p>
+            <h3 class="project-title">Modular Automated Guided Vehicle</h3>
+            <p>Low-cost warehouse automation robot with swappable payload modules, designed for small-scale facilities.</p>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-image" style="background-image: url('Images/helmet1.png')">
-            <div class="project-overlay">
-              <a href="#" class="view-project" onclick="openProjectModal('bike-helmet'); return false;">View Project</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Bike Helmet Analysis</h3>
-            <p>Comprehensive analysis of bicycle helmet design focused on improved safety, aerodynamics, and comfort for cycling enthusiasts.</p>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
+        <!-- Project 2 - Music Machine -->
         <div class="project-card">
           <div class="project-image" style="background-image: url('Images/project3.PNG')">
             <div class="project-overlay">
@@ -686,33 +674,20 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
+        <!-- Project 3 - Bike Helmet -->
         <div class="project-card">
-          <div class="project-image" style="background-image: url('Images/rotary%20compressor.png')">
+          <div class="project-image" style="background-image: url('Images/helmet1.png')">
             <div class="project-overlay">
-              <a href="#" class="view-project" onclick="openProjectModal('rotary-compressor'); return false;">View Project</a>
+              <a href="#" class="view-project" onclick="openProjectModal('bike-helmet'); return false;">View Project</a>
             </div>
           </div>
           <div class="project-info">
-            <h3 class="project-title">Lobed Rotary Compressor</h3>
-            <p>Design and analysis of an efficient lobed rotary compressor for industrial applications.</p>
+            <h3 class="project-title">Bike Helmet Analysis</h3>
+            <p>Comprehensive analysis of bicycle helmet design focused on improved safety, aerodynamics, and comfort for cycling enthusiasts.</p>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
-          <div class="project-image" style="background-image: url('Images/centrifugal%20blower.png')">
-            <div class="project-overlay">
-              <a href="#" class="view-project" onclick="openProjectModal('centrifugal-blower'); return false;">View Project</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Centrifugal Blower</h3>
-            <p>Engineering design of a high-performance centrifugal blower with optimized aerodynamics.</p>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
+        <!-- Project 4 - Investment Analysis -->
         <div class="project-card">
           <div class="project-image" style="background-image: url('Images/investment.png')">
             <div class="project-overlay">
@@ -722,6 +697,32 @@
           <div class="project-info">
             <h3 class="project-title">Investment Analysis Project</h3>
             <p>Comprehensive financial analysis of investment opportunities, including risk assessment and return projections.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 - FSAE Fuel Tank -->
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('Images/fsae1.png')">
+            <div class="project-overlay">
+              <a href="#" class="view-project" onclick="openProjectModal('fsae-fuel-tank'); return false;">View Project</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">FSAE Fuel Tank</h3>
+            <p>Custom-designed fuel tank for a Formula SAE race car, optimizing weight, capacity, and safety requirements.</p>
+          </div>
+        </div>
+
+        <!-- Project 6 - Rotary Compressor -->
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('Images/rotary%20compressor.png')">
+            <div class="project-overlay">
+              <a href="#" class="view-project" onclick="openProjectModal('rotary-compressor'); return false;">View Project</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Lobed Rotary Compressor</h3>
+            <p>Design and analysis of an efficient lobed rotary compressor for industrial applications.</p>
           </div>
         </div>
       </div>
@@ -824,13 +825,13 @@
       <h2 class="section-title">Contact Me</h2>
       <div class="contact-container">
         <div class="contact-info">
-          <a href="mailto:carlespascuetc@icloud.com" class="contact-item">
+          <a href="/cdn-cgi/l/email-protection#264547544a43555647554553435245664f454a4953420845494b" class="contact-item">
             <div class="contact-icon">
               <i class="fas fa-envelope"></i>
             </div>
             <div class="contact-details">
               <h3>Email</h3>
-              <p>carlespascuetc@icloud.com</p>
+              <p><span class="__cf_email__" data-cfemail="b0d3d1c2dcd5c3c0d1c3d3c5d5c4d3f0d9d3dcdfc5d49ed3dfdd">[email&#160;protected]</span></p>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/carles-pascuet-cuesta/" target="_blank" class="contact-item">
@@ -860,7 +861,7 @@
     <p>&copy; 2025 Carles Pascuet Cuesta. All rights reserved.</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Add FontAwesome if not already included
     if (!document.querySelector('link[href*="font-awesome"]')) {
       const fontAwesome = document.createElement('link');
@@ -913,49 +914,47 @@
 
     // Project details
     const projectDetails = {
-      "fsae-fuel-tank": `
-        <h2>FSAE Fuel Tank</h2>
+      "magv": `
+        <h2>Modular Automated Guided Vehicle (MAGV)</h2>
         <div class="image-gallery">
-          <div class="gallery-image"><img src="Images/fsae1.png" alt="FSAE Fuel Tank 1" /></div>
-          <div class="gallery-image"><img src="Images/fsae2.png" alt="FSAE Fuel Tank 2" /></div>
-          <div class="gallery-image"><img src="Images/fsae3.png" alt="FSAE Fuel Tank 3" /></div>
+          <div class="gallery-image"><img src="Images/MAGV5.png" alt="MAGV Complete Assembly" /></div>
+          <div class="gallery-image"><img src="Images/MAGV1.png" alt="MAGV Assembly 1" /></div>
+          <div class="gallery-image"><img src="Images/MAGV2.png" alt="MAGV Assembly 2" /></div>
+          <div class="gallery-image"><img src="Images/MAGV3.png" alt="MAGV Assembly 3" /></div>
+          <div class="gallery-image"><img src="Images/MAGV4.png" alt="MAGV Assembly 4" /></div>
+          <div class="gallery-image"><img src="Images/MAGV6.png" alt="MAGV Assembly 6" /></div>
+          <div class="gallery-image"><img src="Images/MAGV7.png" alt="MAGV Assembly 7" /></div>
+          <div class="gallery-image"><img src="Images/MAGV8.png" alt="MAGV Controls Diagram" /></div>
+          <div class="gallery-image"><img src="Images/MAGV9.png" alt="MAGV Electrical Schematic" /></div>
+          <div class="gallery-image"><img src="Images/MAGV10.png" alt="MAGV Structural Analysis" /></div>
+          <div class="gallery-image"><img src="Images/MAGV11.png" alt="MAGV Module Design" /></div>
+          <div class="gallery-image"><img src="Images/MAGV12.png" alt="MAGV Technical Details" /></div>
+          <div class="gallery-image"><img src="Images/MAGV13.png" alt="MAGV FEA Analysis" /></div>
+          <div class="gallery-image"><img src="Images/MAGV14.png" alt="MAGV Final Assembly" /></div>
         </div>
         <h3>Project Overview</h3>
-        <p>As part of the Formula SAE team, I was responsible for designing and manufacturing the fuel tank for our race car. This critical component needed to balance capacity requirements, weight constraints, safety regulations, and integration with the vehicle's systems.</p>
-        <h3>Design Specifications</h3>
+        <p>As the lead engineer on Team Rover Works, I spearheaded the development of a Modular Automated Guided Vehicle (MAGV) designed to bring flexible warehouse automation to small facilities at a fraction of the cost of existing solutions. Our goal was to create a scalable, affordable platform that could democratize Industry 4.0 technology for businesses that previously couldn't justify the investment in automation.</p>
+        <h3>Technical Specifications</h3>
         <ul>
-          <li>5.5-liter capacity optimized for endurance race requirements</li>
-          <li>Custom baffling system to prevent fuel sloshing during high-G maneuvers</li>
-          <li>Integrated fuel level sensor and pickup design</li>
-          <li>Compliance with all FSAE safety regulations</li>
-          <li>Lightweight aluminum construction with reinforced mounting points</li>
+          <li>30-pound payload capacity at 4 mph sustained speed</li>
+          <li>Minimum 2-hour runtime on a 12-volt battery system</li>
+          <li>Interchangeable motorless payload modules powered via hexagonal drive shaft</li>
+          <li>Two functional modules developed: conveyor module and pin docking unit</li>
+          <li>PID-controlled line following with five IR sensors and four ultrasonic sensors for obstacle avoidance</li>
+          <li>$1,750 bill of materials achieving 10x cost reduction versus nearest competitor</li>
         </ul>
-        <h3>Manufacturing Process</h3>
-        <p>The tank was manufactured using aluminum components, with careful attention to testing for leaks and structural integrity. Special consideration was given to the fuel pickup design to ensure reliable operation under all driving conditions.</p>
-        <h3>Results</h3>
-        <p>The completed fuel tank performed flawlessly during competition, contributing to our team's overall success. The design achieved a 20% weight reduction compared to the previous year's tank while improving fuel delivery reliability and safety features.</p>
-      `,
-      "bike-helmet": `
-        <h2>Bike Helmet Analysis</h2>
-        <div class="image-gallery">
-          <div class="gallery-image"><img src="Images/helmet1.png" alt="Helmet 1" /></div>
-          <div class="gallery-image"><img src="Images/helmet2.png" alt="Helmet 2" /></div>
-          <div class="gallery-image"><img src="Images/helmet3.png" alt="Helmet 3" /></div>
-        </div>
-        <h3>Project Overview</h3>
-        <p>This project involved testing a new bicycle helmet design that utilized the same principle as golf balls - incorporating strategic surface dimples to alter the boundary layer and reduce drag. We tested helmets of the same size but with different surface patterns to determine the aerodynamic improvements.</p>
-        <h3>Analysis Components</h3>
-        <ul>
-          <li>3D printing of multiple helmet models with varying surface patterns</li>
-          <li>Wind tunnel testing to measure drag coefficients under controlled conditions</li>
-          <li>Boundary layer analysis to understand airflow characteristics</li>
-          <li>Comparative performance measurements against standard helmet designs</li>
-          <li>Optimization of dimple patterns for maximum aerodynamic advantage</li>
-        </ul>
-        <h3>Key Findings</h3>
-        <p>The analysis confirmed that helmets with strategically placed dimples, similar to golf balls, significantly reduced the drag force. This means cyclists would need to exert less force to maintain the same speed, resulting in improved performance and reduced fatigue during longer rides.</p>
-        <h3>Testing Methodology</h3>
-        <p>All models were 3D printed to ensure consistent dimensions while only varying the surface patterns. Each design was thoroughly tested in a wind tunnel, allowing us to precisely measure the aerodynamic properties and determine the optimal configuration for reducing drag while maintaining structural integrity.</p>
+        <h3>Mechanical Design</h3>
+        <p>I designed the main body around a 0.25-inch hot-rolled steel baseplate for rigidity, with an 80/20 aluminum extrusion frame allowing rapid assembly and easy maintenance. The drivetrain uses two 12V DC motors with 16:1 gearboxes driving the main wheels, supported by four casters for stability. A NEMA-23 stepper motor drives a hexagonal modular shaft that transmits mechanical power to the swappable top modules—a key innovation allowing motorless module designs.</p>
+        <h3>Module Development</h3>
+        <p>The conveyor module repurposes an existing roller/belt system with a 3:1 chain-and-sprocket reduction achieving 0.3 m/s belt speed. I designed custom bearing assemblies using angular-contact and deep-groove ball bearings with thrust-bearing stacks to handle combined radial and axial loads. The pin docking module features four actuated pins with 5.4:1 gear ratio and ½″-8 lead screws, achieving 55mm stroke in under 5 seconds. I incorporated 3D-printed breakaway pins as a safety feature to protect the structure from overload.</p>
+        <h3>Controls & Electronics</h3>
+        <p>The electrical system runs entirely on 12V with buck converters and DC-DC converters supplying 5V and 48V components. I programmed the Arduino Mega 2560 and ESP32 for dual control modes: autonomous line-following with T-node task execution, and manual PS5 controller operation with dead-man switch safety. The controls logic uses integer arrays to store predetermined tasks at each node, and a custom Human Machine Interface (HMI) enables intuitive programming of robot paths. Total codebase: 1,116 lines across both microcontrollers.</p>
+        <h3>Structural Analysis</h3>
+        <p>I conducted FEA validation on critical components. The conveyor module shaft analysis (90N bevel gear loads, 55N tangential tension, 2Nm end moments) showed maximum stress of 70.23 MPa against 283 MPa yield strength for a factor of safety of 4 and peak deflection of only 0.25mm. The main body plate analysis under operational loads (200N wheel loads, 30N stepper mount, 50N battery, 100N vertical supports) yielded maximum stress of 4.6 MPa versus 220 MPa yield strength—a factor of safety of 47.</p>
+        <h3>Manufacturing & Results</h3>
+        <p>I coordinated the manufacturing of 127 parts using 98% recycled raw materials, with 250+ hours of machine shop time across lathe, mill, waterjet, laser cutter, and CNC operations. The final assembly comprises 218 components. Testing validated all engineering requirements: 50 lbs payload capacity (exceeding spec), 4 mph line-following speed, 0.3 m/s conveyor speed, and 3.2-second full pin deployment. The $734.35 net budget demonstrates how strong repurposing and sustainability practices can dramatically reduce development costs while maintaining performance.</p>
+        <h3>Impact & Future Development</h3>
+        <p>The Rover Works MAGV proves that small warehouses can adopt Industry 4.0 technology through accessible engineering rather than expensive traditional automation. At a $2,000 target retail price—over 10x cheaper than competitors—we've created a viable path for small facility automation. Future improvements include wireless task programming, wiring harnesses for improved assembly and reliability, magnetic tape navigation for industrial environments, and enhanced sensor packages for more robust obstacle detection.</p>
       `,
       "music-machine": `
         <h2>Music Machine</h2>
@@ -980,45 +979,27 @@
         <h3>Results</h3>
         <p>The completed Music Machine successfully combines mechanical engineering with electronic elements to create an engaging interactive experience. The point system rewards players for accurate timing, creating a fun and challenging game that demonstrates principles of mechatronics and user interface design.</p>
       `,
-      "rotary-compressor": `
-        <h2>Lobed Rotary Compressor</h2>
+      "bike-helmet": `
+        <h2>Bike Helmet Analysis</h2>
         <div class="image-gallery">
-          <div class="gallery-image"><img src="Images/rotary%20compressor.png" alt="Rotary Compressor" /></div>
+          <div class="gallery-image"><img src="Images/helmet1.png" alt="Helmet 1" /></div>
+          <div class="gallery-image"><img src="Images/helmet2.png" alt="Helmet 2" /></div>
+          <div class="gallery-image"><img src="Images/helmet3.png" alt="Helmet 3" /></div>
         </div>
         <h3>Project Overview</h3>
-        <p>This project involved the design and analysis of a 2-lobe rotary compressor for industrial applications. The focus was on creating an efficient, reliable compressor that could deliver consistent performance while minimizing energy consumption and maintenance requirements.</p>
-        <h3>Design Features</h3>
+        <p>This project involved testing a new bicycle helmet design that utilized the same principle as golf balls - incorporating strategic surface dimples to alter the boundary layer and reduce drag. We tested helmets of the same size but with different surface patterns to determine the aerodynamic improvements.</p>
+        <h3>Analysis Components</h3>
         <ul>
-          <li>Two-lobe rotor design for increased volumetric efficiency</li>
-          <li>Optimized rotor profile to minimize slip and internal leakage</li>
-          <li>Advanced sealing system to maintain compression ratios</li>
-          <li>Oil-free operation capability for sensitive applications</li>
-          <li>Integrated cooling channels to manage heat generation</li>
+          <li>3D printing of multiple helmet models with varying surface patterns</li>
+          <li>Wind tunnel testing to measure drag coefficients under controlled conditions</li>
+          <li>Boundary layer analysis to understand airflow characteristics</li>
+          <li>Comparative performance measurements against standard helmet designs</li>
+          <li>Optimization of dimple patterns for maximum aerodynamic advantage</li>
         </ul>
-        <h3>Performance Analysis</h3>
-        <p>Computational fluid dynamics (CFD) analysis was conducted to evaluate the compressor's performance across various operating conditions. The design demonstrated superior efficiency compared to conventional rotary compressors, particularly at partial load conditions where many compressors suffer significant performance degradation.</p>
-        <h3>Applications</h3>
-        <p>The final design is suitable for applications requiring clean, oil-free compressed air such as food processing, pharmaceutical manufacturing, and electronics production. The compressor's compact footprint and reliability make it an excellent choice for space-constrained industrial environments.</p>
-      `,
-      "centrifugal-blower": `
-        <h2>Centrifugal Blower</h2>
-        <div class="image-gallery">
-          <div class="gallery-image"><img src="Images/centrifugal%20blower.png" alt="Centrifugal Blower" /></div>
-        </div>
-        <h3>Project Overview</h3>
-        <p>This project focused on the CAD design of the outer housing and components of a high-performance centrifugal blower. I worked on the exterior casing design that would house the blower mechanism.</p>
-        <h3>Design Approach</h3>
-        <ul>
-          <li>CAD modeling of the outer housing to accommodate blower components</li>
-          <li>Integration planning for mounting and connection points</li>
-          <li>Structural analysis to ensure housing integrity during operation</li>
-          <li>Design optimization for manufacturability and assembly</li>
-          <li>Material selection for durability and performance</li>
-        </ul>
-        <h3>Technical Implementation</h3>
-        <p>The housing design was developed to work around the existing blade design, ensuring proper clearances and structural support. Special attention was paid to access points for maintenance and the overall form factor to ensure the blower could be easily integrated into various systems.</p>
-        <h3>Results</h3>
-        <p>The final centrifugal blower housing design provided excellent structural support while maintaining the necessary internal geometry for optimal airflow. The completed design integrated seamlessly with the blower's internal components and provided a durable, functional exterior.</p>
+        <h3>Key Findings</h3>
+        <p>The analysis confirmed that helmets with strategically placed dimples, similar to golf balls, significantly reduced the drag force. This means cyclists would need to exert less force to maintain the same speed, resulting in improved performance and reduced fatigue during longer rides.</p>
+        <h3>Testing Methodology</h3>
+        <p>All models were 3D printed to ensure consistent dimensions while only varying the surface patterns. Each design was thoroughly tested in a wind tunnel, allowing us to precisely measure the aerodynamic properties and determine the optimal configuration for reducing drag while maintaining structural integrity.</p>
       `,
       "investment-analysis": `
         <h2>EQR Investment Analysis Project</h2>
@@ -1039,13 +1020,57 @@
         <h3>Methodology</h3>
         <p>We created detailed financial tables and models to analyze historical data and current market conditions, developing a comprehensive understanding of EQR's financial health and growth potential.</p>
         <h3>Results</h3>
-        <p>The analysis provided a clear investment recommendation for EQR based on its financial fundamentals, market position, and growth prospects. Our detailed financial models enabled us to make a well-substantiated recommendation supported by thorough data analysis and industry knowledge.</p>
+        <p>The analysis provided a clear investment recommendation for EQR based on its financial fundamentals, market position, and growth prospects. Our detailed financial models enabled us to make a well-substantiated recommendation supported by quantitative analysis.</p>
       `,
+      "fsae-fuel-tank": `
+        <h2>FSAE Fuel Tank</h2>
+        <div class="image-gallery">
+          <div class="gallery-image"><img src="Images/fsae1.png" alt="FSAE Fuel Tank 1" /></div>
+          <div class="gallery-image"><img src="Images/fsae2.png" alt="FSAE Fuel Tank 2" /></div>
+          <div class="gallery-image"><img src="Images/fsae3.png" alt="FSAE Fuel Tank 3" /></div>
+        </div>
+        <h3>Project Overview</h3>
+        <p>As part of the Formula SAE team, I was responsible for designing and manufacturing the fuel tank for our race car. This critical component needed to balance capacity requirements, weight constraints, safety regulations, and integration with the vehicle's systems.</p>
+        <h3>Design Specifications</h3>
+        <ul>
+          <li>5.5-liter capacity optimized for endurance race requirements</li>
+          <li>Custom baffling system to prevent fuel sloshing during high-G maneuvers</li>
+          <li>Integrated fuel level sensor and pickup design</li>
+          <li>Compliance with all FSAE safety regulations</li>
+          <li>Lightweight aluminum construction with reinforced mounting points</li>
+        </ul>
+        <h3>Manufacturing Process</h3>
+        <p>The tank was manufactured using aluminum components, with careful attention to testing for leaks and structural integrity. Special consideration was given to the fuel pickup design to ensure reliable operation under all driving conditions.</p>
+        <h3>Results</h3>
+        <p>The completed fuel tank performed flawlessly during competition, contributing to our team's overall success. The design achieved a 20% weight reduction compared to the previous year's tank while improving fuel delivery reliability and safety features.</p>
+      `,
+      "rotary-compressor": `
+        <h2>Lobed Rotary Compressor</h2>
+        <div class="image-gallery">
+          <div class="gallery-image"><img src="Images/rotary%20compressor.png" alt="Rotary Compressor" /></div>
+        </div>
+        <h3>Project Overview</h3>
+        <p>This project involved the design and analysis of a 2-lobe rotary compressor for industrial applications. The focus was on creating an efficient, reliable compressor that could deliver consistent performance while minimizing energy consumption and maintenance requirements.</p>
+        <h3>Design Features</h3>
+        <ul>
+          <li>Two-lobe rotor design for increased volumetric efficiency</li>
+          <li>Optimized rotor profile to minimize slip and internal leakage</li>
+          <li>Advanced sealing system to maintain compression ratios</li>
+          <li>Oil-free operation capability for sensitive applications</li>
+          <li>Integrated cooling channels to manage heat generation</li>
+        </ul>
+        <h3>Performance Analysis</h3>
+        <p>Computational fluid dynamics (CFD) analysis was conducted to evaluate the compressor's performance across various operating conditions. The design demonstrated superior efficiency compared to conventional rotary compressors, particularly at partial load conditions where many compressors suffer significant performance degradation.</p>
+        <h3>Applications</h3>
+        <p>The final design is suitable for applications requiring clean, oil-free compressed air such as food processing, pharmaceutical manufacturing, and electronics production. The compressor's compact footprint and reliability make it an excellent choice for space-constrained industrial environments.</p>
+      `
     };
 
-    function openProjectModal(id) {
-      modalContent.innerHTML = projectDetails[id];
-      modal.style.display = "block";
+    function openProjectModal(projectId) {
+      if (projectDetails[projectId]) {
+        modalContent.innerHTML = projectDetails[projectId];
+        modal.style.display = "block";
+      }
     }
   </script>
 </body>
